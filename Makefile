@@ -6,11 +6,13 @@
 #    By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 11:42:30 by roda-min          #+#    #+#              #
-#    Updated: 2022/10/31 12:23:50 by roda-min         ###   ########.fr        #
+#    Updated: 2022/10/31 12:58:47 by roda-min         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+LIBFT = libft.h
 
 CC = gcc
 

@@ -5,17 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:40:39 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:42:38 by roda-min         ###   ########.fr       */
+/*   Created: 2022/10/31 12:45:38 by roda-min          #+#    #+#             */
+/*   Updated: 2022/10/31 12:57:54 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <ctype.h>
 
-
 int ft_isalnum(int c)
-{
+{    
     return (c >= 65 && c <= 90) || (c >= 97 && c <= 122) ||
         (c >= 48 && c <= 57);
 }
