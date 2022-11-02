@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:22 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 16:30:40 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:00:13 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,69 @@
 // The substring begins at index ’start’ and is of
 // maximum size ’len’.
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
-{
-    size_t	i;
-	size_t	j;
-	char	*str;
+// char *ft_substr(char const *s, unsigned int start, size_t len)
+// {
+//     size_t	i;
+// 	size_t	j;
+// 	char	*str;
 
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
+// 	str = malloc(sizeof(char) * (len + 1));
+// 	if (!str)
+// 		return (NULL);
+// 	i = 0;
+// 	j = 0;
+// 	while (s[i])
+// 	{
+// 		if (i >= start && j < len)
+// 		{
+// 			str[j] = s[i];
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	str[j] = 0;
+// 	return (str);
+// }
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	unsigned int	i;
+	unsigned int	s_len;
+	char			*substr;
+
+	if (!s)
+		return (NULL);
+	s_len = strlen(s);
+	if (s_len < start)
+	{
+		if (!(substr = malloc(sizeof(char) * 1)))
+			return (NULL);
+		substr[0] = '\0';
+		return (substr);
+	}
+	if (!(substr = malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	while (i < len)
 	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
+		substr[i] = s[start + i];
 		i++;
 	}
-	str[j] = 0;
-	return (str);
+	substr[i] = '\0';
+	return (substr);
 }
+
+int main()
+{
+    char src[] = "substr function Implementation";
+ 
+    int m = 7;
+    int n = 12;
+ 
+    char* dest = ft_substr(src, m, n);
+ 
+    printf("%s\n", dest);
+ 
+    return 0;
+}
+

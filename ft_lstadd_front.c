@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:09:32 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 14:35:02 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 17:09:48 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,13 @@ t_list *ft_lstnew(void *content)
 
 void    ft_lstadd_front(t_list **lst, t_list *new)
 {
+    if (!new)
+        return ;
+    if (!*lst)
+    {
+        *lst = new;
+        return ;
+    }
     new->next = *lst;
     *lst = new;
 }
