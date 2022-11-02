@@ -6,12 +6,11 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:40:55 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:42:40 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 10:25:16 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 // itoa () function is used to convert int data type to string data type in C language.
 

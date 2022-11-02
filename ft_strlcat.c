@@ -6,26 +6,32 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:01 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:42:56 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 10:28:04 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-// The strlcpy() and strlcat() functions copy and concatenate strings respectively. 
-// They are designed to be safer, more consistent, and less error prone replacements
-// for strncpy(3) and strncat(3). Unlike those functions, strlcpy() and strlcat()
+// The strlcpy() and strlcat() functions copy and concatenate strings 
+//respectively. 
+// They are designed to be safer, more consistent, and less error 
+//prone replacements
+// for strncpy(3) and strncat(3). Unlike those functions, strlcpy() 
+//and strlcat()
 // take the full size of the buffer (not just the length)
 // and guarantee to NUL-terminate the result 
 // (as long as size is larger than 0 or, in the case of strlcat(),
 // as long as there is at least one byte free in dst).
 // Note that a byte for the NUL should be included in size.
-// Also note that strlcpy() and strlcat() only operate on true ''C'' strings.
-// This means that for strlcpy() src must be NUL-terminated and for strlcat()
+// Also note that strlcpy() and strlcat() only operate on
+//true ''C'' strings.
+// This means that for strlcpy() src must be NUL-terminated
+// and for strlcat()
 // both src and dst must be NUL-terminated.
-// The strlcat() function appends the NUL-terminated string src to the end of dst. 
-// It will append at most size - strlen(dst) - 1 bytes, NUL-terminating the result.  
+// The strlcat() function appends the NUL-terminated string 
+//src to the end of dst. 
+// It will append at most size - strlen(dst) - 1 bytes, 
+//NUL-terminating the result.  
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -48,10 +54,10 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
     
 }
 
-int main()
-{
-    char t[] = "Rodrigo";
-    char y[] = "Nevpsyu";
+// int main()
+// {
+//     char t[] = "Rodrigo";
+//     char y[] = "Nevpsyu";
 
-    printf("%ld", ft_strlcat(t, y, 10));
-}
+//     printf("%ld", ft_strlcat(t, y, 10));
+// }

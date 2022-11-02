@@ -6,28 +6,28 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:39:07 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:42:37 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 10:37:33 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-// The C library function void *calloc(size_t nitems, size_t size) allocates the 
-// requested memory and returns a pointer to it. 
-// The difference in malloc and calloc is that malloc does not set the memory to zero
-//  where as calloc sets allocated memory to zero.
+//The C library function void *calloc(size_t nitems, size_t size) 
+//allocates the 
+//requested memory and returns a pointer to it. 
+//The difference in malloc and calloc is that malloc 
+//does not set the memory to zero
+//where as calloc sets allocated memory to zero.
 
-
-void *ft_calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t nitems, size_t size)
 {
-    void *pointer;
+	void	*pointer;
 
 	pointer = malloc(nitems * size);
 	if (pointer == NULL)
-    {
+	{
 		return (pointer);
-    }
-    ft_bzero(pointer, size * nitems);
+	}
+	ft_bzero(pointer, size * nitems);
 	return (pointer);
 }

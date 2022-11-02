@@ -6,16 +6,15 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:40:58 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:42:42 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 11:19:41 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-void *ft_memchr(const void *str, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-    size_t			i;
+	size_t			i;
 	unsigned char	*s;
 	unsigned char	character;
 

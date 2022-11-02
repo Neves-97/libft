@@ -6,13 +6,11 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:38 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:42:53 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 10:26:05 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
 // The strdup() and strndup() functions are used to duplicate a string. 
 // strdup() : 

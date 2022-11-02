@@ -6,12 +6,11 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:14 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:43:01 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 10:29:01 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
@@ -39,24 +38,24 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 	return (0);
 }
 
-int main()
-{
-    char d[] = "Ganda mocaboy";
-    char e[] = "boy";
+// int main()
+// {
+//     char d[] = "Ganda mocaboy";
+//     char e[] = "boy";
 
-    printf("MINE\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("%s\n", ft_strnstr(d, e, 20));
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("ORIGINAL\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("%s\n", strstr(d, e));
+//     printf("MINE\n");
+//     printf("\n");
+//     printf("\n");
+//     printf("\n");
+//     printf("%s\n", ft_strnstr(d, e, 20));
+//     printf("\n");
+//     printf("\n");
+//     printf("\n");
+//     printf("ORIGINAL\n");
+//     printf("\n");
+//     printf("\n");
+//     printf("\n");
+//     printf("%s\n", strstr(d, e));
 
 
-}
+// }
