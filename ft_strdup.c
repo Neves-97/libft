@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:38 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 10:26:05 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:00:30 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@
 // malloc and hence it can be freed using free(). 
 // It returns a pointer to the duplicated string s.
 // Below is the C implementation to show the use of strdup() function in C:
- 
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-    char	*new;
+	char	*new;
 	int		i;
 	int		size;
 
 	size = 0;
 	while (s[size])
 		++size;
-	if (!(new = malloc(sizeof(char) * (size + 1))))
+	new = malloc(sizeof(char) * (size + 1));
+	if (!(new))
 		return (NULL);
 	i = 0;
 	while (s[i])
@@ -44,14 +44,10 @@ char *ft_strdup(const char *s)
 	return (new);
 }
 
-// char	*ft_strdup(const char *s)
+// int	main()
 // {
-// 	char	*new;
-// 	size_t	len;
-
-// 	len = ft_strlen(s) + 1;
-// 	new = (char *)malloc(sizeof(*new) * len);
-// 	if (!new)
-// 		return (NULL);
-// 	return ((char *)ft_memcpy(new, s, len));
+// 	char source[] = "GeeksForGeeks";
+// 	char* target = ft_strdup(source);
+// 	printf("%s", target);
+// 	return 0;
 // }

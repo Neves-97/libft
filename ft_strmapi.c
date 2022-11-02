@@ -6,12 +6,11 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:09 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:43:00 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 15:57:47 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 /*
 ** Applies the function f to each character of the string passed
@@ -25,7 +24,22 @@
 ** Libc functions malloc(3)
 */
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	unsigned int	i;
+	char			*str;
 
+	i = 0;
+	if (!s)
+		return (NULL);
+	str = malloc(ft_strlen(s) + 1);
+	if (!(str))
+		return (NULL);
+	while (s[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

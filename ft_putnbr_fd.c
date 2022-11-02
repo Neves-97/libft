@@ -6,15 +6,15 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:22 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 10:25:50 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/02 13:22:36 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    if (n == -2147483648)
+	if (n == -2147483648)
 		ft_putstr_fd("-2147483648", fd);
 	else
 	{
