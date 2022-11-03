@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 17:14:21 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/03 14:06:34 by roda-min         ###   ########.fr       */
+/*   Created: 2022/11/02 17:14:16 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/03 16:23:36 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../stand/libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+// lst: The address of a pointer to the first link of
+// a list.
+// new: The address of a pointer to the node to be
+// added to the list.
+
+// Adds the node ’new’ at the end of the list
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-    if (!*lst)
-        return ;
-    while (*lst)
-    {
-        tmp = (*lst)->next;
-        ft_lstdelone(*lst, del);
-        *lst = tmp;
-    }
-    lst = NULL;
-    
-    
-
-    
-    
+	if (!(new))
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = ft_lstlast(*lst);
+	tmp->next = new;
 }

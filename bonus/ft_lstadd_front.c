@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:39:03 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 10:35:51 by roda-min         ###   ########.fr       */
+/*   Created: 2022/11/02 14:09:32 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/03 16:23:30 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../stand/libft.h"
 
-// The bzero() function erases the data in the n bytes of the memory
-// starting at the location pointed to by s, by writing zeros (bytes
-// containing '\0') to that area.
-
-void	ft_bzero(void *s, size_t n)
+void    ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t		i;
-	char		*str;
-
-	if (n == 0)
-	{
-		return ;
-	}
-	str = (char *)s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = 0;
-		i++;
-	}
+    if (!new)
+        return ;
+    if (!*lst)
+    {
+        *lst = new;
+        return ;
+    }
+    new->next = *lst;
+    *lst = new;
 }

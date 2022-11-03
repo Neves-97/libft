@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:14:23 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/03 14:03:08 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/03 16:23:44 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // The del statement can be used to delete an item at a given index.
 // It can also be used to remove slices from a list.
 
-#include "libft.h"
+#include "../stand/libft.h"
 
 void ft_lstdelone(t_list *lst, void (*del)(void*))
 {

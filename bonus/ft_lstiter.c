@@ -6,11 +6,11 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:14:26 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/03 13:33:37 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/03 16:25:24 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../stand/libft.h"
 
 
 // lst: The address of a pointer to a node.

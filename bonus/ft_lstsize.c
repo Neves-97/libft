@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 17:14:16 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 17:42:11 by roda-min         ###   ########.fr       */
+/*   Created: 2022/11/02 17:14:34 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/03 16:26:01 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../stand/libft.h"
 
-// lst: The address of a pointer to the first link of
-// a list.
-// new: The address of a pointer to the node to be
-// added to the list.
 
-// Adds the node ’new’ at the end of the list
+// The length of the list
+// Counts the number of nodes in a list.
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*tmp;
+	int	i;
 
-	if (!(new))
-		return ;
-	if (!*lst)
+	i = 0;
+	while (lst)
 	{
-		*lst = new;
-		return ;
+		lst = lst->next;
+		i++;
 	}
-	tmp = ft_lstlast(*lst);
-	tmp->next = new;
+	return (i);
 }

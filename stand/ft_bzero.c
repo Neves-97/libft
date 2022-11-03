@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 17:14:34 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 17:51:21 by roda-min         ###   ########.fr       */
+/*   Created: 2022/10/31 11:39:03 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/03 15:56:21 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// The length of the list
-// Counts the number of nodes in a list.
+// The bzero() function erases the data in the n bytes of the memory
+// starting at the location pointed to by s, by writing zeros (bytes
+// containing '\0') to that area.
 
-int	ft_lstsize(t_list *lst)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t		i;
+	char		*str;
 
-	i = 0;
-	while (lst)
+	if (n == 0)
 	{
-		lst = lst->next;
+		return ;
+	}
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = 0;
 		i++;
 	}
-	return (i);
 }
