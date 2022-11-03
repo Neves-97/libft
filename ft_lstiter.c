@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:14:26 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 17:54:14 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/03 13:33:37 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,11 @@
 
 void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-        
+        if (!lst || !f)
+            return ;
+        while (lst != '/0')
+        {
+            f(lst->content);
+            lst = lst->next;
+        }
 }
