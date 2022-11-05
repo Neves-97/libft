@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:14:45 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/03 15:29:56 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/05 07:58:57 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strdup(const char *s);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int nb);
-char **ft_split(char const *s, char c);
+char			**ft_split(char const *s, char c);
 char *ft_strjoin(char const *s1, char const *s2);
 
 

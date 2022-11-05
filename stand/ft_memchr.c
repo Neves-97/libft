@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:40:58 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 11:19:41 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/05 03:08:07 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,17 @@
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	character;
+	size_t				i;
+	const unsigned char	*s;
 
-	s = (unsigned char *)str;
-	character = (unsigned char)c;
 	i = 0;
+	s = (const unsigned char*)str;
 	while (i < n)
 	{
-		if (*s == character)
-		{
-			return (str);
-		}
-		str++;
+		if (s[i] == (unsigned char)c)
+			return ((void *)&s[i]);
 		i++;
 	}
 	return (NULL);
 }
+

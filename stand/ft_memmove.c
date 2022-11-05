@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:06 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 11:36:44 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/05 06:05:50 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,29 @@
 // copies n characters from str2 to str1, but for overlapping memory blocks,
 //  memmove() is a safer approach than memcpy().
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*d1;
-	char	*s1;
+	int	i;
 
-	d1 = (char *)dest;
-	s1 = (char *)src;
-	if (dest == src)
+	if (!dst && !src)
+		return (NULL);
+	if (dst > src)
 	{
-		return (dest);
-	}
-	if (s1 < d1)
-	{
-		while (n--)
+		i = (int)len - 1;
+		while (i >= 0)
 		{
-			*(d1 + n) = *(s1 + n);
+			*(char *)(dst + i) = *(char *)(src + i);
+			i--;
 		}
-		return (n);
 	}
-	while (n--)
+	else
 	{
-		*d1++ = *s1++;
+		i = 0;
+		while (i < (int)len)
+		{
+			*(char *)(dst + i) = *(char *)(src + i);
+			i++;
+		}
 	}
-	return (n);
+	return (dst);
 }

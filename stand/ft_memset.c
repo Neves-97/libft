@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:09 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 11:39:02 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/05 03:21:42 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,12 @@
 // copies the character c (an unsigned char) 
 // to the first n characters of the string pointed to, by the argument str.
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*pointer;
-	size_t			i;
+	unsigned char	*ptr;
 
-	i = 0;
-	pointer = (unsigned char *) str;
-	while (i < n)
-	{
-		i++;
-		pointer = (unsigned char) c;
-	}
-	return (str);
+	ptr = (unsigned char *)b;
+	while (len-- > 0)
+		*(ptr++) = (unsigned char)c;
+	return (b);
 }
