@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:04 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 11:33:18 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/06 13:55:42 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,17 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*s1;
-	unsigned char	*s2;
-	size_t			i;
+	size_t	i;
+	char	*s1;
 
+	s1 = (char *)dest;
 	i = 0;
-	s1 = (unsigned char *)dest;
-	s2 = (unsigned char *)src;
-	if (!s1 && !s2)
+	while (i < n)
 	{
-		return (0);
-	}
-	while (s2[i] && i < n)
-	{
-		s1[i] = s2[i];
+		*(char *)s1 = *(char *)src;
+		s1++;
+		src++;
 		i++;
 	}
-	return (s1);
+	return (dest);
 }
