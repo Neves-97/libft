@@ -40,21 +40,21 @@ OBJS = $(SRC:.c=.o)
 BONUS =	ft_lstadd_back.c	\
 		ft_lstadd_front.c	\
 		ft_lstclear.c		\
-		ft_lstdelone.c	\
+		ft_lstdelone.c		\
 		ft_lstiter.c		\
 		ft_lstlast.c		\
-		ft_lstmap.c		\
-		ft_lstnew.c		\
+		ft_lstmap.c			\
+		ft_lstnew.c			\
 		ft_lstsize.c		\
 
-BONUS_OBJS = $(BONcUS:.c=.o)
+BONUS_OBJS = $(BONUS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
-AR = ar crs
+AR = ar -crs
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) 
 	$(AR) $@ $^
 
 %.o: %.c
@@ -63,14 +63,14 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(NAME) $(OBJS) $(BONUS_OBJS)
 
 fclean:	clean
-	$(RM) $(NAME)		
+	$(RM) $(OBJS)		
 
 re:	fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(NAME) $(OBJS)  $(BONUS_OBJS)
+bonus: $(NAME) $(BONUS_OBJS)
+	$(AR) $(NAME)   $(BONUS_OBJS)
 
 .PHONY:	all clean fclean re bonus

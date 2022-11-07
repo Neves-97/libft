@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:32:15 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/07 11:41:28 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:28:30 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_atoi(const char *str)
 	i = 0;
 	result = 0;
 	signal = 1;
-	while (str[i] && (*str == ' ' || *str == '\n' || *str == '\t' ||*str == '\v' 
-	|| *str == '\f' || *str == '\r'))
+	while (str[i] && (*str == ' ' || *str == '\n' || *str == '\t'
+			|| *str == '\v' || *str == '\f' || *str == '\r'))
 		str++;
 	if (str[i] == '-')
 		signal = -1;

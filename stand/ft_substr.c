@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:22 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 17:00:13 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:54:46 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-int main()
-{
-    char src[] = "substr function Implementation";
+// int main()
+// {
+//     char src[] = "substr function Implementation";
  
-    int m = 7;
-    int n = 12;
+//     int m = 7;
+//     int n = 12;
  
-    char* dest = ft_substr(src, m, n);
+//     char* dest = ft_substr(src, m, n);
  
-    printf("%s\n", dest);
+//     printf("%s\n", dest);
  
-    return 0;
-}
+//     return 0;
+// }
 

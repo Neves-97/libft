@@ -6,22 +6,18 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:19 by roda-min          #+#    #+#             */
-/*   Updated: 2022/10/31 11:43:03 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:16:10 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 
+// Allocates (with malloc(3)) and returns a copy of
+// ’s1’ with the characters specified in ’set’ removed
+// from the beginning and the end of the strin
 
-int main () {
-   const char haystack[20] = "TutorialsPoint";
-   const char needle[10] = "Tutorials";
-   char *ret;
+// #include "libft.h"
 
-   ret = strstr(haystack, needle);
-
-   printf("The substring is: %s\n", ret);
+// char *ft_strtrim(char const *s1, char const *set)
+// {
    
-   return(0);
-}
+// }

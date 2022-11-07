@@ -6,12 +6,11 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:14:34 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/03 16:26:01 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:32:46 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stand/libft.h"
-
+#include "libft.h"
 
 // The length of the list
 // Counts the number of nodes in a list.

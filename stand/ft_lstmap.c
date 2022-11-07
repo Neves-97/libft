@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:14:30 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/03 16:25:48 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:44:13 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@
 // the function ’f’. The ’del’ function is used to
 // delete the content of a node if needed.
 
-#include "../stand/libft.h"
+#include "libft.h"
 
-
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
 	t_list	*first;
@@ -33,7 +32,8 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 	first = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew(f(lst->content))))
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
 			ft_lstclear(&first, del);
 			return (0);

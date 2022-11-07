@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 17:14:26 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/05 04:25:09 by roda-min         ###   ########.fr       */
+/*   Created: 2022/11/02 17:14:05 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/07 17:33:24 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../stand/libft.h"
+// lst: The beginning of the list.
+// Return value Last node of the list
 
-// lst: The address of a pointer to a node.
-// f: The address of the function used to iterate on
-// the list.
+#include "libft.h"
 
-// Iterates the list ’lst’ and applies the function
-// ’f’ on the content of each node.
-
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst || !f)
-		return ;
-	while (lst != '/0')
+	if (!lst)
+		return (0);
+	while (lst)
 	{
-		f(lst->content);
+		if (lst->next == NULL)
+			return (lst);
 		lst = lst->next;
 	}
+	return (lst);
 }
