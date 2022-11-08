@@ -6,12 +6,11 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:04 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 10:28:30 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/07 20:52:11 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
