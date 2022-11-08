@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:39:03 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/03 15:56:21 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:01:40 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ void	ft_bzero(void *s, size_t n)
 	char		*str;
 
 	if (n == 0)
-	{
 		return ;
-	}
 	str = (char *)s;
 	i = 0;
 	while (i < n)
@@ -33,3 +31,11 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
+
+// int	main()
+// {
+// 	char str[50] = "This is string.h library function";
+// 	ft_bzero(str, 50);
+// 	puts(str);
+// 	return (0);
+// }

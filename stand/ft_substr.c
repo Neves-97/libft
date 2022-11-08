@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:22 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/07 12:54:46 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/08 15:18:40 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,69 +25,33 @@
 // The substring begins at index ’start’ and is of
 // maximum size ’len’.
 
-// char *ft_substr(char const *s, unsigned int start, size_t len)
-// {
-//     size_t	i;
-// 	size_t	j;
-// 	char	*str;
-
-// 	str = malloc(sizeof(char) * (len + 1));
-// 	if (!str)
-// 		return (NULL);
-// 	i = 0;
-// 	j = 0;
-// 	while (s[i])
-// 	{
-// 		if (i >= start && j < len)
-// 		{
-// 			str[j] = s[i];
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// 	str[j] = 0;
-// 	return (str);
-// }
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	char			*sub_str;
 	unsigned int	i;
-	unsigned int	s_len;
-	char			*substr;
 
 	if (!s)
 		return (NULL);
-	s_len = strlen(s);
-	if (s_len < start)
+	if ((size_t)start > ft_strlen(s))
 	{
-		if (!(substr = malloc(sizeof(char) * 1)))
+		sub_str = malloc(sizeof(char) * 1);
+		if (sub_str == NULL)
 			return (NULL);
-		substr[0] = '\0';
-		return (substr);
+		free(sub_str);
+		sub_str[0] = 0;
+		return (sub_str);
 	}
-	if (!(substr = malloc(sizeof(char) * (len + 1))))
+	sub_str = malloc(sizeof(char) * (len + 1));
+	if (sub_str == NULL)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while ((char)s[start] && (size_t)i < len)
 	{
-		substr[i] = s[start + i];
+		sub_str[i] = (char)s[start];
 		i++;
+		start++;
 	}
-	substr[i] = '\0';
-	return (substr);
+	free(sub_str);
+	sub_str[i] = 0;
+	return (sub_str);
 }
-
-// int main()
-// {
-//     char src[] = "substr function Implementation";
- 
-//     int m = 7;
-//     int n = 12;
- 
-//     char* dest = ft_substr(src, m, n);
- 
-//     printf("%s\n", dest);
- 
-//     return 0;
-// }
-

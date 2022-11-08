@@ -57,6 +57,11 @@ AR = ar -crs
 $(NAME): $(OBJS) 
 	$(AR) $@ $^
 
+# The file name of the target of the rule. If the target is an archive member,
+# then ' $@ ' is the name of the archive file. 
+# In a pattern rule that has multiple targets (see Introduction to Pattern Rules), ' $@ ' 
+# is the name of whichever target caused the rule's recipe to be run.
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
