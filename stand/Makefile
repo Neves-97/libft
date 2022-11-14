@@ -54,7 +54,7 @@ CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 AR = ar -crs
 
-$(NAME): $(OBJS) 
+$(NAME): $(OBJS) $(BONUS_OBJS)
 	$(AR) $@ $^
 
 # The file name of the target of the rule. If the target is an archive member,

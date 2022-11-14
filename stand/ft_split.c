@@ -6,81 +6,155 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:27 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/05 09:53:40 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/14 20:08:40 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_div_counter(char const *s, char c)
+static int	count_words(const char *str, char c)
 {
-	int i;
-	int counter;
+	int	i;
+	int	trigger;
 
-	counter = 0;
-	if (s[0] && s[0] != c)
-		counter++;
 	i = 0;
-	while (i < (int)ft_strlen(s))
+	trigger = 0;
+	while (*str)
 	{
-		if (s[i] == c && s[i + 1] != c && s[i + 1])
-			counter++;
-		i++;
+		if (*str != c && trigger == 0)
+		{
+			trigger = 1;
+			i++;
+		}
+		else if (*str == c)
+			trigger = 0;
+		str++;
 	}
-	return (counter);
+	return (i);
 }
 
-/*
-** This auxiliar function segments the 's' array into parts.
-*/
-
-static char		*ft_segmentator(char const *s, char c, int i)
+static char	*word_dup(const char *str, int start, int finish)
 {
-	int		j;
-	int		k;
-	char	*resultant_string;
-
-	j = i;
-	while (s[i] && s[i] != c)
-		i++;
-	resultant_string = (char *)malloc(sizeof(char) * ((i - j) + 1));
-	if (!resultant_string)
-		return (NULL);
-	k = 0;
-	while (j != i)
-	{
-		resultant_string[k] = s[j];
-		k++;
-		j++;
-	}
-	resultant_string[k] = '\0';
-	return (resultant_string);
-}
-
-char			**ft_split(char const *s, char c)
-{
-	char	**array;
+	char	*word;
 	int		i;
-	int		j;
 
-	if (!s)
-		return (NULL);
-	array = (char **)malloc(sizeof(char *) * (ft_div_counter(s, c) + 1));
-	if (!array)
-		return (NULL);
+	i = 0;
+	word = malloc((finish - start + 1) * sizeof(char));
+	while (start < finish)
+		word[i++] = str[start++];
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**split;
+
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !(split))
+		return (0);
 	i = 0;
 	j = 0;
-	while (i <= (int)ft_strlen(s) && ft_div_counter(s, c))
+	index = -1;
+	while (i <= ft_strlen(s))
 	{
-		if (ft_strlen(ft_segmentator(s, c, i)))
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			array[j] = ft_segmentator(s, c, i);
-			i += (ft_strlen(array[j]) + 1);
-			j++;
+			split[j++] = word_dup(s, index, i);
+			index = -1;
 		}
-		else
-			i++;
+		i++;
 	}
-	array[j] = NULL;
-	return (array);
+	split[j] = 0;
+	return (split);
 }
+// static int	numstring(char const *s1, char c)
+// {
+// 	int	comp;
+// 	int	cles;
+
+// 	comp = 0;
+// 	cles = 0;
+// 	if (*s1 == '\0')
+// 		return (0);
+// 	while (*s1 != '\0')
+// 	{
+// 		if (*s1 == c)
+// 			cles = 0;
+// 		else if (cles == 0)
+// 		{
+// 			cles = 1;
+// 			comp++;
+// 		}
+// 		s1++;
+// 	}
+// 	return (comp);
+// }
+
+// static int	numchar(char const *s2, char c, int i)
+// {
+// 	int	lenght;
+
+// 	lenght = 0;
+// 	while (s2[i] != c && s2[i] != '\0')
+// 	{
+// 		lenght++;
+// 		i++;
+// 	}
+// 	return (lenght);
+// }
+
+// char	**freee(char **dst, int j)
+// {
+// 	while (j > 0)
+// 	{
+// 		j--;
+// 		free((void *)dst[j]);
+// 	}
+// 	free(dst);
+// 	return (NULL);
+// }
+
+// static char	**affect(char const *s, char **dst, char c, int l)
+// {
+// 	int	i;
+// 	int	j;
+// 	int	k;
+
+// 	i = 0;
+// 	j = 0;
+// 	while (s[i] != '\0' && j < l)
+// 	{
+// 		k = 0;
+// 		while (s[i] == c)
+// 			i++;
+// 		dst[j] = (char *)malloc(sizeof(char) * numchar(s, c, i) + 1);
+// 		if (dst[j] == NULL)
+// 			return (freee(dst, j));
+// 		while (s[i] != '\0' && s[i] != c)
+// 			dst[j][k++] = s[i++];
+// 		dst[j][k] = '\0';
+// 		j++;
+// 	}
+// 	dst[j] = 0;
+// 	return (dst);
+// }
+
+// char	**ft_split(char const *s, char c)
+// {
+// 	char	**dst;
+// 	int		l;
+
+// 	if (s == NULL)
+// 		return (NULL);
+// 	l = numstring(s, c);
+// 	dst = (char **)malloc(sizeof(char *) * (l + 1));
+// 	if (dst == NULL)
+// 		return (NULL);
+// 	return (affect(s, dst, c, l));
+// }

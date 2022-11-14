@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:42:22 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/08 15:18:40 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/14 17:59:42 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,29 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*sub_str;
-	unsigned int	i;
+	char	*sub;
+	size_t	i;
+	size_t	s_len;
 
 	if (!s)
-		return (NULL);
-	if ((size_t)start > ft_strlen(s))
+		return (0);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
 	{
-		sub_str = malloc(sizeof(char) * 1);
-		if (sub_str == NULL)
-			return (NULL);
-		free(sub_str);
-		sub_str[0] = 0;
-		return (sub_str);
+		sub = malloc(sizeof(char));
+		if (!sub)
+			return (0);
+		*sub = '\0';
+		return (sub);
 	}
-	sub_str = malloc(sizeof(char) * (len + 1));
-	if (sub_str == NULL)
-		return (NULL);
+	if (s_len < len)
+		return (ft_strdup((char *)s + start));
 	i = 0;
-	while ((char)s[start] && (size_t)i < len)
-	{
-		sub_str[i] = (char)s[start];
-		i++;
-		start++;
-	}
-	free(sub_str);
-	sub_str[i] = 0;
-	return (sub_str);
+	sub = (char *)malloc(len + 1 * sizeof(char));
+	if (!sub)
+		return (0);
+	while (start < s_len && i < len)
+		sub[i++] = s[start++];
+	sub[i] = '\0';
+	return (sub);
 }

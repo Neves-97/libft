@@ -6,65 +6,63 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:40:55 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/08 13:51:06 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/14 19:53:25 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// itoa () function is used to convert int data type to string data type in C language.
-
-static int	ft_digit_count(long int i)
+static int	lenght(int n)
 {
-	int	count;
+	int	nb;
 
-	count = 0;
-	if (i < 0)
+	nb = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		i *= -1;
-		count++;
+		n = n * -1;
+		nb++;
 	}
-	while (i > 0)
+	while (n > 0)
 	{
-		i /= 10;
-		count++;
+		n = n / 10;
+		nb++;
 	}
-	return (count);
+	return (nb);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char		*str;
-	int			i;
-	long int	nb;
+	char	*res;
+	size_t	nb;
 
-	nb = n;
-	i = ft_digit_count(nb);
-	if (!(str = malloc(i * sizeof(char) + 1)))
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	nb = lenght(n);
+	res = (char *)malloc(nb + 1 * sizeof(char));
+	if (!res)
 		return (0);
-	str[i--] = 0;
-	if (nb == 0)
+	res[nb] = '\0';
+	nb--;
+	if (n == 0)
+		res[0] = '0';
+	else if (n < 0)
 	{
-		str = ft_calloc(2, sizeof(char));
-		str[0] = 48;
+		res[0] = '-';
+		n = n * -1;
 	}
-	if (nb < 0)
+	while (n > 0)
 	{
-		str[0] = '-';
-		nb = nb * -1;
+		res[nb] = (n % 10) + '0';
+		n = n / 10;
+		nb--;
 	}
-	while (nb > 0)
-	{
-		str[i--] = nb % 10 + '0';
-		nb = nb / 10;
-	}
-	return (str);
+	return (res);
 }
-
 
 // int main(void)
 // {
 // 	printf("%s\n", ft_itoa(123156));
 // 	return (0);
 // }
-
