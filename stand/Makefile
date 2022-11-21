@@ -62,6 +62,10 @@ $(NAME): $(OBJS) $(BONUS_OBJS)
 # In a pattern rule that has multiple targets (see Introduction to Pattern Rules), ' $@ ' 
 # is the name of whichever target caused the rule's recipe to be run.
 
+
+
+# specifies how to make a file n.o, with another file n.c as its prerequisite, 
+# provided that n.c exists or can be made.
 %.o: %.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
