@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:27 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/15 18:20:13 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/22 12:45:23 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-static int	count_words(const char *str, char c)
+int	count_words(const char *str, char c)
 {
 	int	i;
 	int	trigger;
@@ -37,7 +37,7 @@ static int	count_words(const char *str, char c)
 
 //start == 3 finish == 9 -> 9 - 3 + 1 ||40
 
-static char	*word_dup(const char *str, int start, int finish)
+char	*word_dup(const char *str, int start, int finish)
 {
 	char	*word;
 	int		i;

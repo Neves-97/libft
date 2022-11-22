@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:41:38 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 13:00:30 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/22 08:41:35 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *s)
 
 	size = 0;
 	while (s[size])
-		++size;
+		size++;
 	new = malloc(sizeof(char) * (size + 1));
 	if (!(new))
 		return (NULL);

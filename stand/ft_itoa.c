@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:40:55 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/14 19:53:25 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/22 08:38:00 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static int	lenght(int n)
 		return (1);
 	if (n < 0)
 	{
-		n = n * -1;
+		n *= -1;
 		nb++;
 	}
 	while (n > 0)
 	{
-		n = n / 10;
+		n /= 10;
 		nb++;
 	}
 	return (nb);
@@ -50,12 +50,12 @@ char	*ft_itoa(int n)
 	else if (n < 0)
 	{
 		res[0] = '-';
-		n = n * -1;
+		n *= -1;
 	}
 	while (n > 0)
 	{
 		res[nb] = (n % 10) + '0';
-		n = n / 10;
+		n /= 10;
 		nb--;
 	}
 	return (res);
