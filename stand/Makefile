@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/24 18:52:47 by roda-min          #+#    #+#              #
+#    Updated: 2022/11/24 18:52:49 by roda-min         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 
 SRC	=	ft_atoi.c		\
@@ -74,8 +86,8 @@ CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
 AR = ar -crs
 
-$(NAME): $(OBJS) $(BONUS_OBJS)
-	$(AR) $@ $^
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
 # The file name of the target of the rule. If the target is an archive member,
 # then ' $@ ' is the name of the archive file. 
@@ -98,20 +110,17 @@ $(NAME): $(OBJS) $(BONUS_OBJS)
 # "%.o: %.c" means that any file ending in .o depends on the same filename ending in
 # .c to be present.
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $^ -o $@
-
 all: $(NAME)
 
 clean:
-	$(RM) $(NAME) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:	clean
-	$(RM) $(OBJS)		
+	$(RM) $(NAME)		
 
 re:	fclean all
 
-bonus: $(NAME) $(BONUS_OBJS)
-	$(AR) $(NAME)   $(BONUS_OBJS)
+bonus: $(OBJS) $(BONUS_OBJS)
+	$(AR) $(NAME) $(BONUS_OBJS)
 
 .PHONY:	all clean fclean re bonus

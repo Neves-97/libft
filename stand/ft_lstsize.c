@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:14:34 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/07 17:32:46 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/24 12:11:31 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,11 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
+
+// int	main()
+// {
+// 	t_list *one = ft_lstnew("Neves");
+// 	one->next = ft_lstnew("macho");
+// 	one->next->next = ft_lstnew("rodrigo");
+// 	printf("Existem: %i, listas", ft_lstsize(one));
+// }

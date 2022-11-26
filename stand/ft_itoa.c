@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 11:40:55 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/23 17:34:12 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/26 17:02:27 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 int	lenght(int n)
 {
-	int	nb;
+	int	i;
 
-	nb = 0;
+	i = 0;
 	if (n == 0)
 		return (1);
 	if (n < 0)
 	{
 		n *= -1;
-		nb++;
+		i++;
 	}
 	while (n > 0)
 	{
 		n /= 10;
-		nb++;
+		i++;
 	}
-	return (nb);
+	return (i);
 }
 
 char	*ft_itoa(int n)
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
 	i = lenght(n);
-	res = (char *)malloc(i + 1 * sizeof(char));
+	res = (char *)(i + 1 * sizeof(char));
 	if (!res)
 		return (0);
 	res[i] = '\0';

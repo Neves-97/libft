@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 14:09:32 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/07 17:31:53 by roda-min         ###   ########.fr       */
+/*   Updated: 2022/11/24 11:09:13 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,11 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
+
+// int	main()
+// {
+// 	char *string = "Neves";
+// 	t_list *lststr = ft_lstnew(string);
+// 	char *str = lststr->content;
+// 	printf("%s\n", str);
+// }
