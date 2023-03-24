@@ -12,12 +12,6 @@
 
 #include "libft.h"
 
-// lst: The address of a pointer to the first link of
-// a list.
-// new: The address of a pointer to the node to be
-// added to the list.
-
-// Adds the node ’new’ at the end of the list
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
@@ -33,15 +27,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	tmp = ft_lstlast(*lst);
 	tmp->next = new;
 }
-
-// int	main()
-// {	
-// 	t_list *one = ft_lstnew("yaus");
-// 	one->next = ft_lstnew("nickle");
-// 	one->next->next = ft_lstnew("tom");
-
-// 	t_list *yo = ft_lstadd_back(one);
-// 	char	*gay = yo->content;
-// 	printf("Existem: %i, listas\n", ft_lstsize(one));
-// 	printf("Existem: %s, listas", gay);
-// }

@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:41:09 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/05 03:21:42 by roda-min         ###   ########.fr       */
+/*   Created: 2022/10/31 11:41:38 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/22 08:41:35 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// The C library function void *memset(void *str, int c, size_t n) 
-// copies the character c (an unsigned char) 
-// to the first n characters of the string pointed to, by the argument str.
-
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strdup(const char *s)
 {
-	unsigned char	*ptr;
+	char	*new;
+	int		i;
+	int		size;
 
-	ptr = (unsigned char *)b;
-	while (len-- > 0)
-		*(ptr++) = (unsigned char)c;
-	return (b);
+	size = 0;
+	while (s[size])
+		size++;
+	new = malloc(sizeof(char) * (size + 1));
+	if (!(new))
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		new[i] = s[i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }

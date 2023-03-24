@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:39:03 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/08 16:01:40 by roda-min         ###   ########.fr       */
+/*   Created: 2022/10/31 11:41:01 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/07 18:30:16 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// The bzero() function erases the data in the n bytes of the memory
-// starting at the location pointed to by s, by writing zeros (bytes
-// containing '\0') to that area.
-
-void	ft_bzero(void *s, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
-	char		*str;
+	size_t	i;
 
-	if (n == 0)
-		return ;
-	str = (char *)s;
 	i = 0;
 	while (i < n)
 	{
-		str[i] = 0;
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		i++;
 	}
+	return (0);
 }
-
-// int	main()
-// {
-// 	char str[50] = "This is string.h library function";
-// 	ft_bzero(str, 50);
-// 	puts(str);
-// 	return (0);
-// }

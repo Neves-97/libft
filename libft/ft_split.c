@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//Conaca da tia	split = ["Conaca", "da", "tia", NULL]	split[0] = "Conaca" 26
-
 #include "libft.h"
 
 int	count_words(const char *str, char c)
@@ -35,8 +33,6 @@ int	count_words(const char *str, char c)
 	return (i);
 }
 
-//start == 3 finish == 9 -> 9 - 3 + 1 ||40
-
 char	*word_dup(const char *str, int start, int finish)
 {
 	char	*word;
@@ -51,8 +47,6 @@ char	*word_dup(const char *str, int start, int finish)
 	word[i] = '\0';
 	return (word);
 }
-
-//   Conaca da tia	index == 3 || 55
 
 char	**ft_split(char const *s, char c)
 {

@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:41:46 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/02 16:20:25 by roda-min         ###   ########.fr       */
+/*   Created: 2022/11/02 17:14:30 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/24 17:14:44 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Applies the function ’f’ on each character of
-// the string passed as argument, passing its index
-// as first argument. Each character is passed by
-// address to ’f’ to be modified if necessary
-
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
+	t_list	*new;
+	t_list	*first;
 
-	i = 0;
-	while (s[i] != '\0')
+	first = NULL;
+	while (lst)
 	{
-		f(i, s + i);
-		i++;
+		new = ft_lstnew(f(lst->content));
+		if (!new)
+		{
+			ft_lstclear(&first, del);
+			return (0);
+		}
+		ft_lstadd_back(&first, new);
+		lst = lst->next;
 	}
+	return (first);
 }

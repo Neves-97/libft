@@ -37,23 +37,3 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 	}
 	return (0);
 }
-
-// int main()
-// {
-//     char d[] = "Ganda mocaboy";
-//     char e[] = "boy";
-
-//     printf("MINE\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("%s\n", ft_strnstr(d, e, 20));
-//     printf("\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("ORIGINAL\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("%s\n", strstr(d, e));
-// }

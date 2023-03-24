@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 14:09:32 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/24 11:09:13 by roda-min         ###   ########.fr       */
+/*   Created: 2022/10/31 11:41:06 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/07 17:34:31 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	t_list	*new;
+	int	i;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
+	if (!dst && !src)
 		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	if (dst > src)
+	{
+		i = (int)len - 1;
+		while (i >= 0)
+		{
+			*(char *)(dst + i) = *(char *)(src + i);
+			i--;
+		}
+	}
+	else
+	{
+		i = 0;
+		while (i < (int)len)
+		{
+			*(char *)(dst + i) = *(char *)(src + i);
+			i++;
+		}
+	}
+	return (dst);
 }
-
-// int	main()
-// {
-// 	char *string = "Neves";
-// 	t_list *lststr = ft_lstnew(string);
-// 	char *str = lststr->content;
-// 	printf("%s\n", str);
-// }

@@ -10,18 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// lst: The node to free.
-// del: The address of the function used to delete
-// the content.
-
-// Takes as a parameter a node and frees the memory of
-// the node’s content using the function ’del’ given
-// as a parameter and free the node. The memory of
-// ’next’ must not be freed.
-
-// The del statement can be used to delete an item at a given index.
-// It can also be used to remove slices from a list.
-
 #include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))

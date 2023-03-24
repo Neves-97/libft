@@ -33,23 +33,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	return (i);
 }
-
-// int main()
-// {
-//     char d[] = "Gandamocaboy";
-//     char e[] = "qualquercen";
-
-//     printf("MINE\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("%ld\n", ft_strlcpy(d, e, 5));
-//     printf("\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("ORIGINAL\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("%s\n", strcpy(e, d));
-// }

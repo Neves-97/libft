@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:41:57 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/07 20:54:09 by roda-min         ###   ########.fr       */
+/*   Created: 2022/10/31 11:42:01 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/07 20:53:08 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Allocates (with malloc(3)) and returns a new
-// string, which is the result of the concatenation
-// of ’s1’ and ’s2
-
-char	*ft_strjoin(char const *s1, char const *s2)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		i;
-	int		j;
-	char	*str;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (str == NULL)
-		return (NULL);
-	while (s1[i])
-	{
-		str[i] = s1[i];
+	while (dst[i] && i < size)
 		i++;
-	}
-	while (s2[j])
+	while (src[j] && (i + j + 1) < size)
 	{
-		str[i + j] = s2[j];
+		dst[i + j] = src[j];
 		j++;
 	}
-	str[i + j] = '\0';
-	return (str);
+	if (i < size)
+		dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }

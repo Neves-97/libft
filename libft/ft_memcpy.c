@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 17:14:34 by roda-min          #+#    #+#             */
-/*   Updated: 2022/11/24 12:11:31 by roda-min         ###   ########.fr       */
+/*   Created: 2022/10/31 11:41:04 by roda-min          #+#    #+#             */
+/*   Updated: 2022/11/22 14:52:59 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// The length of the list
-// Counts the number of nodes in a list.
-
-int	ft_lstsize(t_list *lst)
+void	*ft_memcpy(void *str1, const void *str2, size_t n)
 {
-	int	i;
+	unsigned int		i;
+	unsigned char		*dst;
+	unsigned const char	*str;
 
+	if (str1 == NULL && str2 == NULL)
+		return (NULL);
 	i = 0;
-	while (lst)
+	dst = (unsigned char *)str1;
+	str = (unsigned char *)str2;
+	while (i < n)
 	{
-		lst = lst->next;
+		*((char *)dst + i) = *((char *)str + i);
 		i++;
 	}
-	return (i);
+	return (dst);
 }
-
-// int	main()
-// {
-// 	t_list *one = ft_lstnew("Neves");
-// 	one->next = ft_lstnew("macho");
-// 	one->next->next = ft_lstnew("rodrigo");
-// 	printf("Existem: %i, listas", ft_lstsize(one));
-// }
